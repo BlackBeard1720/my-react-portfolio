@@ -1,0 +1,54 @@
+.project-card {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  text-align: left;
+  border-radius: 16px;
+  padding: 15px;
+  background-color: var(--project-card-bg);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+}
+
+/* Dark mode tự đổi viền */
+[data-theme="dark"] .project-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--btn-color);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Ảnh */
+.image-container {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Nội dung */
+.project-content {
+  margin-top: 10px;
+}
+
+.project-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+/* 👇 dùng màu phụ cho description */
+.project-content p {
+  font-size: 0.9rem;
+  color: var(--form-text-color);
+}
