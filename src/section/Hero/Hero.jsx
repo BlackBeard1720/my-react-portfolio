@@ -37,7 +37,7 @@ function Hero() {
         <h1>
           Minh
           <br />
-          Pham
+          PQ
         </h1>
         <h2>Frontend Developer</h2>
         <span>

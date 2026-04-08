@@ -1,0 +1,75 @@
+/* SkillsStyles.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.skillList {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-wrap: wrap;
+  gap: 15px; /* Khoảng cách giữa các viên thuốc */
+  max-width: 800px;
+  margin-top: 30px;
+}
+
+/* Kiểu dáng viên thuốc cơ bản */
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 24px;
+  /* Sử dụng màu nền nhẹ nhàng, hòa hợp với theme */
+  background-color: var(--project-card-bg);
+  /* Viền mờ nhẹ để lấy khối, không dùng màu text thô */
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 50px;
+  transition: all 0.2s ease-in-out; /* Hiệu ứng nhanh, mượt */
+  cursor: default;
+}
+
+/* Hiệu ứng hover đơn giản nhất */
+.pill:hover {
+  /* Nhích nhẹ lên trên để tạo cảm giác tương tác */
+  transform: translateY(-3px);
+  /* Chuyển viền và chữ sang màu nhấn (xanh) của theme */
+  border-color: var(--btn-color);
+  color: var(--btn-color);
+  /* Thêm đổ bóng mờ nhẹ màu xanh cho "xịn" */
+  box-shadow: 0 5px 15px rgba(9, 135, 242, 0.1);
+}
+
+/* --- QUAN TRỌNG: Giữ màu gốc của logo --- */
+.pill img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  /* Đảm bảo không có filter nào làm mất màu */
+  filter: none !important;
+  transition: transform 0.2s ease;
+}
+
+/* Hiệu ứng nhẹ cho logo khi hover (tùy chọn) */
+.pill:hover img {
+  /* Phóng to logo một chút để nhấn mạnh */
+  transform: scale(1.1);
+}
+
+.pill p {
+  margin: 0;
+  font-weight: 500;
+  font-family: "Roboto mono", monospace;
+  font-size: 1rem;
+  /* Màu chữ mặc định là màu text-color của theme */
+  color: var(--text-color);
+  transition: color 0.2s ease;
+}
+
+/* Đảm bảo chữ cũng đổi màu khi hover vào pill */
+.pill:hover p {
+  color: var(--btn-color);
+}
