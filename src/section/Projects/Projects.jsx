@@ -14,19 +14,19 @@ function Projects() {
           src={shineSmile}
           link="https://github.com/BlackBeard1720/figma-to-html-03"
           h3="Shine smile"
-          p="Shine smile landing page"
+          p="Responsive dental landing page"
         />
         <ProjectCard
           src={rabbit}
           link="https://github.com/BlackBeard1720/figma-to-html-04"
           h3="Rabbit WEB3"
-          p="Wallet Landing Page"
+          p="Web3 wallet landing page UI"
         />
         <ProjectCard
           src={youtube}
           link="https://github.com/BlackBeard1720/figma-to-html-03"
           h3="Simple youtube clone"
-          p="Shine smile landing page"
+          p="React web app with API & auth"
         />
       </div>
     </section>

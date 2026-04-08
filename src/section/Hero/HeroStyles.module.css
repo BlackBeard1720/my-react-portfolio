@@ -11,8 +11,12 @@
 }
 
 .hero {
-  max-width: 200px;
-  align-self: center; /* Đảm bảo ảnh luôn ở giữa khi xếp dọc */
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--btn-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .container span {
@@ -76,7 +80,6 @@
 
 .description {
   max-width: 24ch;
-  margin: 0 auto;
 }
 
 .info {
@@ -97,8 +100,8 @@
   }
 
   .hero {
-    max-width: 350px;
     width: 350px;
+    height: 350px;
   }
 
   .info {
@@ -112,7 +115,7 @@
 
 @media screen and (min-width: 1400px) {
   .hero {
-    max-width: 400px;
     width: 400px;
+    height: 400px;
   }
 }

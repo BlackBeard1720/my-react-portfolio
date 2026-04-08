@@ -1,6 +1,6 @@
 import React, { use } from "react";
 import styles from "./HeroStyles.module.css";
-import heroImg from "../../assets/hero-img.png";
+import heroImg from "../../assets/Avatar.jpg";
 import sun from "../../assets/sun.svg";
 import moon from "../../assets/moon.svg";
 import twitterLight from "../../assets/twitter-light.svg";
@@ -35,9 +35,9 @@ function Hero() {
       </div>
       <div className={styles.info}>
         <h1>
-          Minh
+          Minh Quang
           <br />
-          PQ
+          Pham
         </h1>
         <h2>Frontend Developer</h2>
         <span>
@@ -52,8 +52,8 @@ function Hero() {
           </a>
         </span>
         <p className={styles.description}>
-          With a passion for developing modern React web apps for commercial
-          businesses.
+          Passionate about building modern, responsive web applications with
+          React.
         </p>
         <a href={CV} download>
           <button className="hover">My CV</button>
