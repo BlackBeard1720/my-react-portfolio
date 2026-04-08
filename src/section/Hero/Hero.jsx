@@ -33,7 +33,7 @@ function Hero() {
           onClick={toggleTheme}
         />
       </div>
-      <div className={styles.infor}>
+      <div className={styles.info}>
         <h1>
           Minh
           <br />
@@ -51,12 +51,12 @@ function Hero() {
             <img src={linkedinIcon} alt="Linkedin icon" />
           </a>
         </span>
-        <p>
+        <p className={styles.description}>
           With a passion for developing modern React web apps for commercial
           businesses.
         </p>
         <a href={CV} download>
-          <button className="hover">Curriculum Vitae</button>
+          <button className="hover">My CV</button>
         </a>
       </div>
     </section>
