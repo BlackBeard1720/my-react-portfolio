@@ -1,87 +1,82 @@
-/* HeroStyles.module.css (hoặc tên file của bạn) */
-
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  align-items: center; /* FIX */
+  gap: 30px;
   text-align: center;
-  height: 100dvh;
-  min-height: 500px;
+  min-height: 100vh;
 }
 
+/* Avatar */
 .hero {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--btn-color);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 4px solid var(--btn-color);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: float 4s ease-in-out infinite;
 }
 
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Theme icon */
+.colorModeContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.colorMode {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 28px;
+  filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.6));
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.colorMode:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.9))
+    drop-shadow(0 0 20px rgba(147, 51, 234, 0.6));
+}
+
+/* Social */
 .container span {
   display: flex;
   gap: 25px;
   justify-content: center;
 }
 
-.container span a {
-  margin: 0;
+.container span img {
+  width: 28px;
+  transition: transform 0.2s ease;
 }
 
-.container span a img {
-  width: 30px;
+.container span img:hover {
+  transform: scale(1.2);
 }
 
-/* Các link chung (thường là nút Resume) */
-.container > a {
-  width: fit-content;
-  align-self: center;
-  text-decoration: none;
-}
-
-.container button {
-  background-color: var(--btn-color);
-  color: var(--btn-text-color);
-  border: none;
-  border-radius: 20px;
-  width: 126px;
-  height: 50px;
-  font-size: 20px;
-  font-weight: bold;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  transition:
-    box-shadow 200ms ease-in-out,
-    transform 200ms ease-in-out;
-  cursor: pointer;
-}
-
-.container button:hover {
-  transform: scale(1.05);
-}
-
-.container button:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-}
-
-.colorModeContainer {
-  position: relative;
-  display: flex;
-  justify-content: center; /* Giữ icon mode ở giữa avatar trên mobile */
-}
-
-.colorMode {
-  position: absolute;
-  right: 0;
-  width: 25px;
-  cursor: pointer;
-}
-
+/* Text */
 .description {
-  max-width: 24ch;
+  max-width: 28ch;
+  line-height: 1.6;
 }
 
+/* Info */
 .info {
   display: flex;
   flex-direction: column;
@@ -89,14 +84,13 @@
   gap: 20px;
 }
 
-/* --- Media Queries (Sử dụng cú pháp chuẩn để tránh lỗi) --- */
-
+/* Desktop */
 @media screen and (min-width: 800px) {
   .container {
     flex-direction: row-reverse;
     align-items: center;
-    justify-content: space-evenly;
-    text-align: left; /* Thường hero section trên PC nên căn trái text */
+    justify-content: space-between;
+    text-align: left;
   }
 
   .hero {
@@ -105,7 +99,8 @@
   }
 
   .info {
-    align-items: flex-start; /* Căn text sang trái cho đẹp trên Desktop */
+    align-items: flex-start;
+    max-width: 500px;
   }
 
   .container span {
@@ -115,7 +110,7 @@
 
 @media screen and (min-width: 1400px) {
   .hero {
-    width: 400px;
-    height: 400px;
+    width: 380px;
+    height: 380px;
   }
 }

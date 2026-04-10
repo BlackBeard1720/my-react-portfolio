@@ -10,6 +10,9 @@ import tailwindIcon from "../../assets/icons/tailwindcss-original.svg";
 import bootstrapIcon from "../../assets/icons/bootstrap-original.svg";
 import jqueryIcon from "../../assets/icons/jquery-original.svg";
 import githubIcon from "../../assets/icons/github-original.svg";
+import sqlServerIcon from "../../assets/icons/microsoftsqlserver-original.svg";
+import phpIcon from "../../assets/icons/php-original.svg";
+import lavarelIcon from "../../assets/icons/laravel-original.svg";
 function Skills() {
   const skills = [
     { name: "C", icon: cIcon },
@@ -22,6 +25,9 @@ function Skills() {
     { name: "Bootstrap", icon: bootstrapIcon },
     { name: "jQuery", icon: jqueryIcon },
     { name: "GitHub", icon: githubIcon },
+    { name: "SQL Server", icon: sqlServerIcon },
+    { name: "Php", icon: phpIcon },
+    { name: "Laravel", icon: lavarelIcon },
   ];
 
   return (

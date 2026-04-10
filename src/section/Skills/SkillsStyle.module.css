@@ -1,10 +1,10 @@
-/* SkillsStyles.module.css */
-
+/* ===== CONTAINER ===== */
 .container {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  padding: 40px 0;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 20px;
 }
 
 .skillList {
@@ -12,64 +12,142 @@
   justify-content: center;
   align-self: center;
   flex-wrap: wrap;
-  gap: 15px; /* Khoảng cách giữa các viên thuốc */
+  gap: 15px;
   max-width: 800px;
   margin-top: 30px;
 }
 
-/* Kiểu dáng viên thuốc cơ bản */
+/* ===== PILL BASE (LIGHT MODE) ===== */
 .pill {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 10px 24px;
-  /* Sử dụng màu nền nhẹ nhàng, hòa hợp với theme */
-  background-color: var(--project-card-bg);
-  /* Viền mờ nhẹ để lấy khối, không dùng màu text thô */
+
+  background-color: var(--pill-bg);
   border: 1px solid rgba(128, 128, 128, 0.3);
   border-radius: 50px;
-  transition: all 0.2s ease-in-out; /* Hiệu ứng nhanh, mượt */
+
+  transition: all 0.25s ease;
   cursor: default;
+
+  will-change: transform;
 }
 
-/* Hiệu ứng hover đơn giản nhất */
+/* ===== LIGHT HOVER ===== */
 .pill:hover {
-  /* Nhích nhẹ lên trên để tạo cảm giác tương tác */
   transform: translateY(-3px);
-  /* Chuyển viền và chữ sang màu nhấn (xanh) của theme */
   border-color: var(--btn-color);
-  color: var(--btn-color);
-  /* Thêm đổ bóng mờ nhẹ màu xanh cho "xịn" */
   box-shadow: 0 5px 15px rgba(9, 135, 242, 0.1);
 }
 
-/* --- QUAN TRỌNG: Giữ màu gốc của logo --- */
+/* ===== ICON ===== */
 .pill img {
   width: 24px;
   height: 24px;
   object-fit: contain;
-  /* Đảm bảo không có filter nào làm mất màu */
   filter: none !important;
   transition: transform 0.2s ease;
 }
 
-/* Hiệu ứng nhẹ cho logo khi hover (tùy chọn) */
 .pill:hover img {
-  /* Phóng to logo một chút để nhấn mạnh */
   transform: scale(1.1);
 }
 
+/* ===== TEXT ===== */
 .pill p {
   margin: 0;
   font-weight: 500;
-  font-family: "Roboto mono", monospace;
+  font-family: "Roboto Mono", monospace;
   font-size: 1rem;
-  /* Màu chữ mặc định là màu text-color của theme */
   color: var(--text-color);
   transition: color 0.2s ease;
 }
 
-/* Đảm bảo chữ cũng đổi màu khi hover vào pill */
 .pill:hover p {
   color: var(--btn-color);
+}
+
+/* ===================================================== */
+/* ================== 🌌 DARK MODE ====================== */
+/* ===================================================== */
+
+[data-theme="dark"] .pill {
+  position: relative;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+  animation: floatIdle 4s ease-in-out infinite;
+}
+
+/* 🌌 FLOAT ANIMATION */
+@keyframes floatIdle {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(2px, -4px);
+  }
+  50% {
+    transform: translate(-2px, -6px);
+  }
+  75% {
+    transform: translate(1px, -3px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* 🌠 LỆCH NHỊP (random feel) */
+[data-theme="dark"] .pill:nth-child(2n) {
+  animation-duration: 5s;
+  animation-delay: 0.5s;
+}
+
+[data-theme="dark"] .pill:nth-child(3n) {
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+
+[data-theme="dark"] .pill:nth-child(4n) {
+  animation-duration: 3.5s;
+  animation-delay: 1.5s;
+}
+
+/* ✨ HOVER DARK */
+[data-theme="dark"] .pill:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(59, 130, 246, 0.5);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.35),
+    0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+/* ⚡ ENERGY SWEEP */
+[data-theme="dark"] .pill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(59, 130, 246, 0.25),
+    transparent
+  );
+
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+[data-theme="dark"] .pill:hover::before {
+  transform: translateX(100%);
 }

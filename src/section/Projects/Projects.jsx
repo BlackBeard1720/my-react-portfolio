@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ProjectsStyles.module.css";
 import shineSmile from "../../assets/shineSmile.png";
 import rabbit from "../../assets/rabbit.png";

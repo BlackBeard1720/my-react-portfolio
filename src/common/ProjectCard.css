@@ -50,5 +50,4 @@
 /* 👇 dùng màu phụ cho description */
 .project-content p {
   font-size: 0.9rem;
-  color: var(--form-text-color);
 }
